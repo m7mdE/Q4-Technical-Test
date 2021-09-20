@@ -92,6 +92,7 @@ footer.reports_docs {
   margin-top: 10px;
 }
 
+/* report title and file size made it flexbox */
 h3.reports_title a {
   color: #fff;
   text-decoration: none;
@@ -112,14 +113,18 @@ h3.reports_title {
   margin: 0;
 }
 
+/* Responsive screen */
 @media (max-width:768px) {
+  /* report article into two clumns */
   .reports {
     grid-column: 1/2;
     grid-template-columns: auto auto;
   }
+  /* img would shrink with responsive */
   img.reports_cover {
     width: 100%;
   }
+  /* report title changed from row to column for better design */
   h3.reports_title a{
     flex-direction: column;
     column-gap: 0px;
