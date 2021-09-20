@@ -3,27 +3,27 @@ var reportsWidget = {
         containerSelector: '.reports',
         template: (
             '{{#.}}' +
-                '<article class="reports_item">' +
-                    '<a href="{{cover}}" target="_blank">' +
-                        '<img class="reports_cover" src="{{cover}}" alt="{{title}} Cover"/>'
-                    '</a>' +
-                    '<footer class="reports_docs">' +
-                        '{{#documents}}' +
-                            '<h3 class="reports_title">' +
-                                '<a href="{{url}}" target="_blank">{{title}}</a>' +
-                            '</h3>' +
-                        '{{/documents}}' +
-                    '</footer>' +
-                '</article>' +
+            '<article class="reports_item">' +
+            '<a href="{{cover}}" target="_blank">' +
+            '<img class="reports_cover" src="{{cover}}" alt="{{title}} Cover"/>' +
+            '</a>' +
+            '<footer class="reports_docs">' +
+            '{{#documents}}' +
+            '<h3 class="reports_title">' +
+            '<a href="{{url}}" target="_blank"><span class="title">{{title}}</span> <span class="file-type">({{file_size}} {{file_type}})</span></a>' +
+            '</h3>' +
+            '{{/documents}}' +
+            '</footer>' +
+            '</article>' +
             '{{/.}}'
         )
     },
 
-    init: function() {
+    init: function () {
         this.renderReports(reportData || []);
     },
 
-    renderReports: function(reports) {
+    renderReports: function (reports) {
         var inst = this,
             options = inst.options;
 
